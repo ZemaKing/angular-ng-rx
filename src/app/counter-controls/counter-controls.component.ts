@@ -12,7 +12,7 @@ export class CounterControlsComponent {
 	constructor(private store: Store) {}
 
 	increment(): void {
-		this.store.dispatch(increment());
+		this.store.dispatch(increment({value: 1}));
 	}
 
 	decrement(): void {
