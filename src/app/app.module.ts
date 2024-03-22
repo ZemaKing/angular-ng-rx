@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
+import {EffectsModule} from '@ngrx/effects';
 import {StoreModule} from '@ngrx/store';
 
 import {AppComponent} from './app.component';
@@ -13,9 +14,13 @@ import {counterReducer} from './store/counter.reducer';
 		CounterOutputComponent,
 		CounterControlsComponent,
 	],
-	imports: [BrowserModule, StoreModule.forRoot({
-		counter: counterReducer,
-	}, {})],
+	imports: [
+		BrowserModule,
+		StoreModule.forRoot({
+			counter: counterReducer,
+		}, {}),
+		EffectsModule.forRoot([])
+	],
 	providers: [],
 	bootstrap: [AppComponent],
 })
