@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {EffectsModule} from '@ngrx/effects';
 import {StoreModule} from '@ngrx/store';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 
 import {AppComponent} from './app.component';
 import {CounterOutputComponent} from './counter-output/counter-output.component';
@@ -20,7 +21,8 @@ import {counterReducer} from './store/counter.reducer';
 		StoreModule.forRoot({
 			counter: counterReducer,
 		}, {}),
-		EffectsModule.forRoot([CounterEffects])
+		EffectsModule.forRoot([CounterEffects]),
+		StoreDevtoolsModule.instrument({logOnly: true}),
 	],
 	providers: [],
 	bootstrap: [AppComponent],
