@@ -9,6 +9,7 @@ import {CounterOutputComponent} from './counter-output/counter-output.component'
 import {CounterControlsComponent} from './counter-controls/counter-controls.component';
 import {CounterEffects} from './store/counter.effects';
 import {counterReducer} from './store/counter.reducer';
+import {StoreRouterConnectingModule} from "@ngrx/router-store";
 
 @NgModule({
 	declarations: [
@@ -23,6 +24,7 @@ import {counterReducer} from './store/counter.reducer';
 		}, {}),
 		EffectsModule.forRoot([CounterEffects]),
 		StoreDevtoolsModule.instrument({logOnly: true}),
+		StoreRouterConnectingModule.forRoot(),
 	],
 	providers: [],
 	bootstrap: [AppComponent],
